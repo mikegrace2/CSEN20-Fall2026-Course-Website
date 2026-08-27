@@ -1,0 +1,10 @@
+.global _start
+_start:
+	LDR R0,=0b11001100001100111010001111001111 // for comparision
+	LDR R1,=0b11001100001100111010001111001111
+	LDR R2,=0b10101010
+	BFI R1,R2,#16,#8
+	
+stop:	B stop
+	
+	

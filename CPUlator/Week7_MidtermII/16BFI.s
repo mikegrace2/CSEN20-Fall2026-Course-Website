@@ -1,0 +1,9 @@
+.global _start
+_start:
+	LDR R2,=0b10010110
+	LDR R3,=0b00110000000000110011001100110011
+	BFI R3,R2,#20,#8
+	
+stop: B stop
+	
+	

@@ -1,0 +1,15 @@
+.global _start
+_start:
+	PUSH {R4-R11}
+	
+	LDR R0,=0b11110000111100001111000011110000
+	ASR R1,R0,#31
+	MVN R2,R0,ASR#31
+	MVN R3,R0,LSR#31
+	LSR R4,R0,#31
+	LSL R5,R0,
+	
+	POP {R4-R11}
+stop: 	B stop	
+	
+	

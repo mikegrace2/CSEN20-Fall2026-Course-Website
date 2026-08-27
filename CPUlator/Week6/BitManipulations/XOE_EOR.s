@@ -1,0 +1,13 @@
+.global _start
+_start:
+	LDR R0,=0b11110000
+	
+	EOR R0,R0,#0b1010
+	EOR R0,R0,#0b1010
+	EOR R0,R0,#0b1010
+	EOR R0,R0,#0b1010
+	EOR R0,R0,#0b1010
+	EOR R0,R0,#0b1010
+	EOR R0,R0,#0b1010
+	
+stop: B stop

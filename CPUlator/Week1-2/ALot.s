@@ -1,0 +1,39 @@
+.global _start
+_start:
+		PUSH {R4-R11}
+		LDR 	R0,=10
+		LDR 	R1,=20
+		LDR 	R2,=30
+		LDR 	R3,=40
+		
+		ADD 	R4,R1,R0
+		MUL		R5,R2,R1
+		ADC 	R6,R2,R4
+		SUB 	R7,R1,R0
+		MUL		R8,R2,R5
+		ADD 	R9,R2,R0
+		ADD 	R10,R2,R1
+		SUB 	R11,R4,R6
+		ADD 	R4,R1,R0
+		MUL		R5,R2,R1
+		ADC 	R6,R2,R4
+		SUB 	R7,R1,R0
+		MUL		R8,R2,R5
+		ADD 	R9,R2,R0
+		ADD 	R10,R2,R1
+		SUB 	R11,R4,R6
+		ADD 	R10,R1,R0
+		MUL		R9,R2,R1
+		ADC 	R8,R2,R4
+		SUB 	R7,R1,R0
+		MUL		R6,R2,R5
+		ADD 	R5,R2,R0
+		ADD 	R4,R2,R1
+		SUB 	R3,R4,R6		
+		
+		POP 	{R4-R11}
+		BX 		LR
+		
+stop: 	B stop		
+	
+	

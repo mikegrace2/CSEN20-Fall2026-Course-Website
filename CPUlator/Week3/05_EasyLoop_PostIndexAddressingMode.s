@@ -1,0 +1,17 @@
+.global _start
+_start:
+		MOV	R0,#0xF
+		LDR R1,=MyArr
+Loop:
+		LDR R2,[R1],#4
+	
+		SUB R0,R0,#1
+		CMP R0,#0
+		BNE Loop
+	
+stop: 	b 		stop	
+	
+	
+.data
+MyArr:	.word 0x00000000, 0x11111111, 0x22222222, 0x33333333, 0x44444444, 0x55555555, 0x66666666, 0x77777777, 0x88888888, 0xAAAAAAAA, 0xBBBBBBBB, 0xCCCCCCCC, 0xDDDDDDDD, 0xEEEEEEEE, 0xFFFFFFFF
+	
