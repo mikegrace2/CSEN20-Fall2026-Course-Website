@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSEN 20 | Lecture Materials</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .lectures-header {
+            background: linear-gradient(135deg, #003B5C, #007FA3);
+            color: white;
+            padding: 70px 0;
+        }
+
+        .lectures-header h1 {
+            font-size: 3.5rem;
+            margin: 15px 0 10px;
+        }
+
+        .lectures-header p {
+            font-size: 1.15rem;
+            max-width: 700px;
+        }
+
+        .lectures-container {
+            padding: 60px 0 90px;
+        }
+
+        .week-section {
+            margin-bottom: 55px;
+        }
+
+        .week-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 3px solid #007FA3;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .week-number {
+            background: #003B5C;
+            color: white;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .week-title h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #003B5C;
+        }
+
+        .week-title p {
+            margin: 3px 0 0;
+            color: #687078;
+        }
+
+        .lecture-files {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .ppt-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            background: white;
+            padding: 18px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-left: 5px solid #F2B134;
+            transition: 0.2s;
+        }
+
+        .ppt-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.12);
+        }
+
+        .ppt-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ppt-icon {
+            font-size: 1.8rem;
+        }
+
+        .ppt-name {
+            font-weight: 700;
+            color: #003B5C;
+            line-height: 1.3;
+        }
+
+        .ppt-button {
+            background: #007FA3;
+            color: white;
+            padding: 9px 14px;
+            border-radius: 5px;
+            text-decoration: none;
+            white-space: nowrap;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .ppt-button:hover {
+            background: #003B5C;
+        }
+
+        @media (max-width: 700px) {
+            .lectures-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .ppt-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .ppt-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .week-header {
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="top-header">
+        <div class="container header-content">
+            <div>
+                <div class="scu-name">SANTA CLARA UNIVERSITY</div>
+                <div class="school-name">CSEN 20 · Introduction to Embedded Systems</div>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="lectures.html">Lectures</a>
+                <a href="labs.html">Labs & Code</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="lectures-header">
+        <div class="container">
+            <div class="course-badge">FALL 2026</div>
+            <h1>Lecture Materials</h1>
+            <p>Download PowerPoint presentations and access lecture materials organized by week.</p>
+        </div>
+    </section>
+
+    <main class="lectures-container">
+        <div class="container">
+
+            <!-- WEEK 1 -->
+            <section class="week-section">
+                <div class="week-header">
+                    <div class="week-number">01</div>
+                    <div class="week-title">
+                        <h2>Week 1: Introduction and Binary Numbers</h2>
+                        <p>Course basics, embedded systems, and binary number fundamentals.</p>
+                    </div>
+                </div>
+                <div class="lecture-files">
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">📊</div>
+                            <div class="ppt-name">Ch00: Basics</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week01_IntroAndBinaryNumbers/Ch00_Basics_18_V4.0.pptx">Download</a>
+                    </div>
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">📊</div>
+                            <div class="ppt-name">Ch01: Introduction</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week01_IntroAndBinaryNumbers/Ch01_Introduction_63_V4.0.pptx">Download</a>
+                    </div>
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">📊</div>
+                            <div class="ppt-name">Ch02: Binary Numbers</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week01_IntroAndBinaryNumbers/Ch02_BinaryNumbers_96_V4.0.pptx">Download</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WEEK 2 -->
+            <section class="week-section">
+                <div class="week-header">
+                    <div class="week-number">02</div>
+                    <div class="week-title">
+                        <h2>Week 2: Writing Functions</h2>
+                        <p>ARM assembly language functions and program structure.</p>
+                    </div>
+                </div>
+                <div class="lecture-files">
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">📊</div>
+                            <div class="ppt-name">Ch03: Writing Functions</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week02_WritingFunctions/Ch03_WritingFunctions_47_V4.0.pptx">Download</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WEEK 3 -->
+            <section class="week-section">
+                <div class="week-header">
+                    <div class="week-number">03</div>
+                    <div class="week-title">
+                        <h2>Week 3: Copying Data</h2>
+                        <p>Moving, loading, storing, and manipulating data in ARM assembly.</p>
+                    </div>
+                </div>
+                <div class="lecture-files">
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">📊</div>
+                            <div class="ppt-name">Ch04: Copying Data</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week03_CopyingData/Ch04_CopyingData_62_V4.0.pptx">Download</a>
+                    </div>
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">📝</div>
+                            <div class="ppt-name">Ch04: Copying Data Exercises</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week03_CopyingData/Ch04_CopyingData_Excercises_32_V4.0.pptx">Download</a>
+                    </div>
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">📄</div>
+                            <div class="ppt-name">Ch04: One Page Left Over</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week03_CopyingData/Ch04_OnePageLeftOver_CHECK_V1.0.pptx">Download</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WEEK 4 -->
+            <section class="week-section">
+                <div class="week-header">
+                    <div class="week-number">04</div>
+                    <div class="week-title">
+                        <h2>Week 4: Integer Arithmetic</h2>
+                        <p>Integer arithmetic operations in ARM assembly language.</p>
+                    </div>
+                </div>
+                <div class="lecture-files">
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">📊</div>
+                            <div class="ppt-name">Ch05: Integer Arithmetic</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week04_IntegerArithmetic/Ch05_Integer%20Arithmetic_36_V4.0.pptx">Download</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WEEK 5 -->
+            <section class="week-section">
+                <div class="week-header">
+                    <div class="week-number">05</div>
+                    <div class="week-title">
+                        <h2>Week 5: Making Decisions and Writing Loops</h2>
+                        <p>Conditional execution, branching, decisions, and loops.</p>
+                    </div>
+                </div>
+                <div class="lecture-files">
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">📊</div>
+                            <div class="ppt-name">Ch06: Making Decisions and Writing Loops</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week05_MakindDecisionsAndWritingLoops/Ch06_MakingDecisions_WritingLoops_55_V4.0.pptx">Download</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WEEK 6 -->
+            <section class="week-section">
+                <div class="week-header">
+                    <div class="week-number">06</div>
+                    <div class="week-title">
+                        <h2>Week 6: Manipulating Bits</h2>
+                        <p>Bitwise operations, masks, shifts, and practical ARM examples.</p>
+                    </div>
+                </div>
+                <div class="lecture-files">
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">📊</div>
+                            <div class="ppt-name">Ch07: Manipulating Bits Plus Examples</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week06_ManipulatingBits/Ch07_ManipulatingBits_PlusExamples_61_V4.0.pptx">Download</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WEEK 7 -->
+            <section class="week-section">
+                <div class="week-header">
+                    <div class="week-number">07</div>
+                    <div class="week-title">
+                        <h2>Week 7: Multiplication and Division Revisited</h2>
+                        <p>Advanced multiplication and division techniques.</p>
+                    </div>
+                </div>
+                <div class="lecture-files">
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">📊</div>
+                            <div class="ppt-name">Ch08: Multiplication and Division Revisited</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week07_MultiplicationAndDivisionRevisited/Ch08_Multiplication%20and%20Division%20Revisited_24_V4.0.pptx">Download</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WEEK 8 -->
+            <section class="week-section">
+                <div class="week-header">
+                    <div class="week-number">08</div>
+                    <div class="week-title">
+                        <h2>Week 8: Floating Point</h2>
+                        <p>Floating-point numbers, IEEE arithmetic, and floating-point emulation.</p>
+                    </div>
+                </div>
+                <div class="lecture-files">
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">📊</div>
+                            <div class="ppt-name">Ch09: Getting Started with Floating Point</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week08_FloatingPoint/Ch09_Getting%20Started%20with%20Floating%20Point_47_V4.0.pptx">Download</a>
+                    </div>
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">📝</div>
+                            <div class="ppt-name">Ch09: IEEE FPU Exercises</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week08_FloatingPoint/Ch09_IEEE_FPU_Excercises_41_V4.0.pptx">Download</a>
+                    </div>
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">📊</div>
+                            <div class="ppt-name">Ch10: Floating-Point Emulation</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week08_FloatingPoint/Ch10_Floating-Point%20Emulation_16_V4.0.pptx">Download</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WEEK 9 -->
+            <section class="week-section">
+                <div class="week-header">
+                    <div class="week-number">09</div>
+                    <div class="week-title">
+                        <h2>Week 9: Fixed-Point Reals and 64-Bit ARM</h2>
+                        <p>Fixed-point arithmetic, real numbers, and the transition to 64-bit ARM concepts.</p>
+                    </div>
+                </div>
+                <div class="lecture-files">
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">📊</div>
+                            <div class="ppt-name">Ch11: Fixed-Point Reals</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week09_FixedPointRealsAnd64bitARM/Ch11_Fixed-Point%20Reals_31_V4.0.pptx">Download</a>
+                    </div>
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">💻</div>
+                            <div class="ppt-name">Ch11: Fixed-Point Reals Examples</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week09_FixedPointRealsAnd64bitARM/Ch11_FixedPointReals_Examples_24_V4.0.pptx">Download</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WEEK 10 -->
+            <section class="week-section">
+                <div class="week-header">
+                    <div class="week-number">10</div>
+                    <div class="week-title">
+                        <h2>Week 10: 64-Bit ARM and Final Preparation</h2>
+                        <p>64-bit ARM programming concepts and final course preparation.</p>
+                    </div>
+                </div>
+                <div class="lecture-files">
+                    <div class="ppt-card">
+                        <div class="ppt-info">
+                            <div class="ppt-icon">📊</div>
+                            <div class="ppt-name">ARM 64-Bit</div>
+                        </div>
+                        <a class="ppt-button" href="lectures/Week10_64bitArmAndFinalPrep/ARM64Bit_48_V4.0.pptx">Download</a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <strong>CSEN 20 · Fall 2026</strong>
+            <p>Introduction to Embedded Systems</p>
+            <p class="footer-small">Santa Clara University</p>
+        </div>
+    </footer>
+
+</body>
+</html>

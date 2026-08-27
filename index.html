@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSEN 20 | Fall 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+:root {
+    --navy: #003B5C;
+    --blue: #007FA3;
+    --light-blue: #00A6D6;
+    --gold: #F2B134;
+    --dark: #16232D;
+    --gray: #687078;
+    --light: #F4F8FA;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Figtree", sans-serif;
+    color: var(--dark);
+    background: #ffffff;
+}
+
+.top-header {
+    background: rgba(0, 59, 92, 0.97);
+    border-bottom: 3px solid var(--gold);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.header-content {
+    min-height: 82px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.scu-name {
+    color: var(--gold);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+}
+
+.school-name {
+    color: white;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+nav {
+    display: flex;
+    gap: 8px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 11px 17px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(0,166,214,0.45), transparent 28%),
+        radial-gradient(circle at 85% 80%, rgba(242,177,52,0.18), transparent 30%),
+        linear-gradient(135deg, #00263D 0%, #003B5C 45%, #007FA3 100%);
+    color: white;
+    padding: 105px 0;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50%;
+    right: -200px;
+    top: -250px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 50%;
+    left: -200px;
+    bottom: -300px;
+}
+
+.hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.course-badge {
+    display: inline-block;
+    background: rgba(242,177,52,0.18);
+    border: 1px solid rgba(242,177,52,0.65);
+    color: var(--gold);
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: clamp(4rem, 7vw, 6.5rem);
+    line-height: 0.95;
+    margin: 20px 0 12px;
+    letter-spacing: -3px;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin: 0 0 25px;
+    font-weight: 600;
+    color: #D9F3FC;
+}
+
+.hero p {
+    max-width: 760px;
+    font-size: 1.18rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.85);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 15px 23px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 800;
+    transition: 0.25s;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.28);
+}
+
+.hero-button-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 23px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    border: 1px solid rgba(255,255,255,0.4);
+    transition: 0.25s;
+}
+
+.hero-button-outline:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+/* HERO CARD */
+
+.hero-card {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(16px);
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.hero-card h3 {
+    margin: 0 0 25px;
+    font-size: 1.4rem;
+}
+
+.course-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.course-details li {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.13);
+    color: rgba(255,255,255,0.85);
+}
+
+.course-details li:last-child {
+    border-bottom: none;
+}
+
+.course-details strong {
+    color: white;
+}
+
+/* STATS */
+
+.stats {
+    position: relative;
+    z-index: 5;
+    margin-top: -45px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(0,59,92,0.15);
+}
+
+.stat {
+    padding: 27px;
+    text-align: center;
+    border-right: 1px solid #E5EDF1;
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat-number {
+    color: var(--blue);
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.stat-label {
+    color: var(--gray);
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+/* MAIN */
+
+.main-content {
+    padding: 90px 0;
+}
+
+.section-label {
+    color: var(--blue);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.8rem;
+}
+
+.section-title {
+    color: var(--navy);
+    font-size: 2.8rem;
+    margin: 10px 0 15px;
+}
+
+.section-intro {
+    color: var(--gray);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 800px;
+}
+
+/* COURSE MATERIALS */
+
+.material-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 22px;
+    margin-top: 45px;
+}
+
+.material-card {
+    background: white;
+    border-radius: 15px;
+    padding: 32px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+    border: 1px solid #E9EFF2;
+    transition: 0.25s;
+}
+
+.material-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(0,59,92,0.14);
+}
+
+.material-card.featured {
+    background: linear-gradient(135deg, #003B5C, #006B8A);
+    color: white;
+    border: none;
+}
+
+.material-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.material-card h3 {
+    color: var(--navy);
+    font-size: 1.4rem;
+    margin: 0 0 12px;
+}
+
+.material-card.featured h3 {
+    color: white;
+}
+
+.material-card p {
+    color: var(--gray);
+    line-height: 1.65;
+}
+
+.material-card.featured p {
+    color: rgba(255,255,255,0.8);
+}
+
+.card-button {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.featured .card-button {
+    color: var(--gold);
+}
+
+/* TOPICS */
+
+.topics-section {
+    padding: 90px 0;
+    background:
+        linear-gradient(135deg, rgba(0,59,92,0.03), rgba(0,166,214,0.08));
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.topic-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #E6EEF2;
+    transition: 0.2s;
+}
+
+.topic-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--light-blue);
+}
+
+.week-tag {
+    color: var(--blue);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.topic-card h3 {
+    margin: 10px 0 8px;
+    color: var(--navy);
+    font-size: 1.05rem;
+}
+
+.topic-card p {
+    color: var(--gray);
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* LEARNING */
+
+.learning-section {
+    padding: 90px 0;
+}
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.learning-card {
+    padding: 32px;
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+    border-top: 5px solid var(--blue);
+}
+
+.learning-card h3 {
+    color: var(--navy);
+    margin-top: 0;
+}
+
+.learning-card p {
+    color: var(--gray);
+    line-height: 1.65;
+}
+
+/* FOOTER */
+
+footer {
+    background: #00263D;
+    color: white;
+    padding: 45px 0;
+}
+
+footer strong {
+    font-size: 1.1rem;
+}
+
+footer p {
+    color: rgba(255,255,255,0.65);
+    margin: 7px 0;
+}
+
+.footer-small {
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .hero-grid,
+    .material-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 0;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav a {
+        padding-left: 0;
+        padding-right: 20px;
+    }
+
+    .hero {
+        padding: 75px 0;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .stats {
+        margin-top: 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        border-radius: 0;
+    }
+
+    .stat:nth-child(2) {
+        border-right: none;
+    }
+
+    .stat {
+        border-bottom: 1px solid #E5EDF1;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .topics-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="top-header">
+    <div class="container header-content">
+        <div>
+            <div class="scu-name">SANTA CLARA UNIVERSITY</div>
+            <div class="school-name">CSEN 20 · Introduction to Embedded Systems</div>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="lectures.html">Lectures</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-grid">
+
+        <div>
+            <div class="course-badge">FALL 2026 · SCHOOL OF ENGINEERING</div>
+
+            <h1>CSEN 20</h1>
+
+            <h2>Introduction to Embedded Systems</h2>
+
+            <p>
+                Explore the world beneath high-level programming. Learn how
+                computers execute instructions, manipulate data, manage memory,
+                perform arithmetic, and interact with hardware through ARM
+                assembly language and low-level programming.
+            </p>
+
+            <div class="hero-buttons">
+                <a class="hero-button" href="lectures.html">
+                    Explore Lecture Materials →
+                </a>
+                <a class="hero-button-outline" href="#topics">
+                    View Course Topics
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <h3>Course Information</h3>
+
+            <ul class="course-details">
+                <li><span>Course</span><strong>CSEN 20</strong></li>
+                <li><span>Term</span><strong>Fall 2026</strong></li>
+                <li><span>University</span><strong>Santa Clara University</strong></li>
+                <li><span>School</span><strong>Engineering</strong></li>
+                <li><span>Primary Focus</span><strong>ARM Assembly</strong></li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<section class="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Course Weeks</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Lecture Presentations</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">ARM</div>
+                <div class="stat-label">Assembly Architecture</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">64-bit</div>
+                <div class="stat-label">Modern ARM Concepts</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main class="main-content">
+    <div class="container">
+
+        <div class="section-label">Course Resources</div>
+        <h2 class="section-title">Everything You Need for CSEN 20</h2>
+
+        <p class="section-intro">
+            Course materials are organized to guide you from fundamental
+            computer concepts and binary numbers to advanced ARM programming,
+            floating-point arithmetic, and 64-bit architecture.
+        </p>
+
+        <div class="material-grid">
+
+            <div class="material-card featured">
+                <div class="material-icon">📚</div>
+                <h3>Lecture Materials</h3>
+                <p>
+                    Access all PowerPoint presentations organized by week.
+                    Follow the complete progression of the course from basic
+                    computer concepts through 64-bit ARM programming.
+                </p>
+                <a class="card-button" href="lectures.html">
+                    Browse All Lectures →
+                </a>
+            </div>
+
+            <div class="material-card">
+                <div class="material-icon">⚙️</div>
+                <h3>ARM Programming</h3>
+                <p>
+                    Learn how ARM processors work and how to write programs
+                    using registers, instructions, functions, branches,
+                    loops, and memory operations.
+                </p>
+            </div>
+
+            <div class="material-card">
+                <div class="material-icon">🔢</div>
+                <h3>Low-Level Computing</h3>
+                <p>
+                    Understand binary numbers, bit manipulation, integer
+                    arithmetic, floating-point representation, and how
+                    computers process information.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</main>
+
+<section class="topics-section" id="topics">
+    <div class="container">
+
+        <div class="section-label">Fall 2026</div>
+        <h2 class="section-title">Course Roadmap</h2>
+
+        <p class="section-intro">
+            A ten-week journey through the foundations of embedded systems
+            and ARM assembly programming.
+        </p>
+
+        <div class="topics-grid">
+
+            <div class="topic-card">
+                <div class="week-tag">Week 01</div>
+                <h3>Introduction & Binary</h3>
+                <p>Computer basics, number systems, and binary representation.</p>
+            </div>
+
+            <div class="topic-card">
+                <div class="week-tag">Week 02</div>
+                <h3>Writing Functions</h3>
+                <p>Functions, program structure, and low-level execution.</p>
+            </div>
+
+            <div class="topic-card">
+                <div class="week-tag">Week 03</div>
+                <h3>Copying Data</h3>
+                <p>Registers, memory, loading, storing, and moving data.</p>
+            </div>
+
+            <div class="topic-card">
+                <div class="week-tag">Week 04</div>
+                <h3>Integer Arithmetic</h3>
+                <p>Arithmetic operations and numerical computation.</p>
+            </div>
+
+            <div class="topic-card">
+                <div class="week-tag">Week 05</div>
+                <h3>Decisions & Loops</h3>
+                <p>Conditional execution, branching, and repetition.</p>
+            </div>
+
+            <div class="topic-card">
+                <div class="week-tag">Week 06</div>
+                <h3>Manipulating Bits</h3>
+                <p>Bitwise operations, masks, shifts, and binary logic.</p>
+            </div>
+
+            <div class="topic-card">
+                <div class="week-tag">Week 07</div>
+                <h3>Multiply & Divide</h3>
+                <p>Advanced multiplication and division techniques.</p>
+            </div>
+
+            <div class="topic-card">
+                <div class="week-tag">Week 08</div>
+                <h3>Floating Point</h3>
+                <p>IEEE floating point, FPU concepts, and emulation.</p>
+            </div>
+
+            <div class="topic-card">
+                <div class="week-tag">Week 09</div>
+                <h3>Fixed Point & ARM64</h3>
+                <p>Fixed-point real numbers and modern ARM architecture.</p>
+            </div>
+
+            <div class="topic-card">
+                <div class="week-tag">Week 10</div>
+                <h3>64-Bit ARM</h3>
+                <p>64-bit ARM programming and final course preparation.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="learning-section">
+    <div class="container">
+
+        <div class="section-label">Learning Outcomes</div>
+        <h2 class="section-title">Build a Strong Low-Level Foundation</h2>
+
+        <div class="learning-grid">
+
+            <div class="learning-card">
+                <h3>🖥️ Computer Architecture</h3>
+                <p>
+                    Understand how processors, memory, registers, instructions,
+                    and data work together inside a computer system.
+                </p>
+            </div>
+
+            <div class="learning-card">
+                <h3>⚡ ARM Assembly Language</h3>
+                <p>
+                    Write and understand low-level ARM programs using
+                    instructions, functions, arithmetic, branches, and loops.
+                </p>
+            </div>
+
+            <div class="learning-card">
+                <h3>🔧 Embedded Systems</h3>
+                <p>
+                    Develop the foundation needed to understand how software
+                    directly interacts with hardware and embedded devices.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <strong>CSEN 20 · Fall 2026</strong>
+        <p>Introduction to Embedded Systems</p>
+        <p class="footer-small">Santa Clara University · School of Engineering</p>
+    </div>
+</footer>
+
+</body>
+</html>
